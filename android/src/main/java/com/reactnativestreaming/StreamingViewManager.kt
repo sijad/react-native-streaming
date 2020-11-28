@@ -1,20 +1,19 @@
 package com.reactnativestreaming
 
 import android.graphics.Color
-import android.view.View
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 import com.facebook.react.uimanager.annotations.ReactProp
 
-class StreamingViewManager : SimpleViewManager<View>() {
+class StreamingViewManager : SimpleViewManager<StreamingView>() {
   override fun getName() = "StreamingView"
 
-  override fun createViewInstance(reactContext: ThemedReactContext): View {
-    return View(reactContext)
+  override fun createViewInstance(reactContext: ThemedReactContext): StreamingView {
+    return StreamingView(reactContext)
   }
 
   @ReactProp(name = "color")
-  fun setColor(view: View, color: String) {
+  fun setColor(view: StreamingView, color: String) {
     view.setBackgroundColor(Color.parseColor(color))
   }
 }
