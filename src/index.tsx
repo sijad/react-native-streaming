@@ -1,18 +1,12 @@
-import { NativeModules, requireNativeComponent, ViewStyle } from 'react-native';
-
-type StreamingType = {
-  multiply(a: number, b: number): Promise<number>;
-};
+import { requireNativeComponent, ViewStyle } from 'react-native';
 
 type StreamingProps = {
   color: string;
   style: ViewStyle;
 };
 
-const { Streaming } = NativeModules;
-
-export const StreamingViewManager = requireNativeComponent<StreamingProps>(
+const StreamingViewManager = requireNativeComponent<StreamingProps>(
   'StreamingView'
 );
 
-export default Streaming as StreamingType;
+export default StreamingViewManager;

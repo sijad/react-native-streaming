@@ -8,7 +8,7 @@ import com.facebook.react.uimanager.ViewManager
 
 class StreamingPackage : ReactPackage {
     override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-        return listOf(StreamingModule(reactContext))
+        return emptyList()
     }
 
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
